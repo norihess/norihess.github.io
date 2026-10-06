@@ -218,7 +218,7 @@ class Component extends DCLogic {
         border: k === (this.state.shot || 0) ? p.accent : "rgba(255,255,255,0.18)"
       })),
       hasShots: !!(p.shots && p.shots.length > 1),
-      projects: PROJECTS.map((x, i) => ({ ...x, n: i + 1, go: () => this.goTo(i + 1), src: x.img, pos: "50% 50%", fit: this.state.narrow ? "contain" : "cover", cardBg: this.state.narrow ? x.bg : "#222" })),
+      projects: PROJECTS.map((x, i) => ({ ...x, n: i + 1, go: () => { if (this.state.active === i + 1) window.location.href = x.href; else this.goTo(i + 1); }, src: x.img, pos: "50% 50%", fit: this.state.narrow ? "contain" : "cover", cardBg: this.state.narrow ? x.bg : "#222" })),
       dots: SLIDES.map((x, i) => ({ title: x.title, go: () => this.goTo(i), dot: i === active ? a.accent : (a.light ? "rgba(10,15,46,0.22)" : "rgba(255,255,255,0.28)") })),
       isIntro: !!p.intro, isProject: !p.intro,
       hintLabel: this.state.narrow ? "Swipe up for case studies" : "Scroll for case studies",
