@@ -19,8 +19,8 @@ a:hover{opacity:.85}
 
   <div ref="{{ reelRef }}" style="position:absolute;inset:0">
     <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
-      <div data-item="{{ p.n }}" onClick="{{ p.go }}" style="position:absolute;left:0;top:0;border-radius:4px;overflow:hidden;cursor:pointer;will-change:transform,width,height,filter;background:#222">
-        <img src="{{ p.src }}" alt="{{ p.title }}" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ p.pos }};display:block">
+      <div data-item="{{ p.n }}" onClick="{{ p.go }}" style="position:absolute;left:0;top:0;border-radius:4px;overflow:hidden;cursor:pointer;will-change:transform,width,height,filter;background:{{ p.cardBg }}">
+        <img src="{{ p.src }}" alt="{{ p.title }}" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ p.fit }};object-position:{{ p.pos }};display:block">
         <div data-frame="1" style="position:absolute;inset:0;border-radius:4px;border:1.5px solid {{ p.accent }};pointer-events:none;opacity:0"></div>
       </div>
     </sc-for>
@@ -174,8 +174,12 @@ class Component extends DCLogic {
     tR = this._tR;
     const dL = dEl ? dEl.getBoundingClientRect().left - rb.left : vw - 60;
     const gapX = Math.max(24, (dL - tR) * 0.08);
-    const W = narrow ? Math.min(vw - 48, vh * 0.4) : Math.min(dL - tR - gapX * 2, vh * 1.1);
-    const H = narrow ? W * 1.3 : W / 1.62;
+    let tBT = tEl ? tEl.getBoundingClientRect().bottom - rb.top : vh * 0.5;
+    if (this._tBT == null || (this.state.textOpacity === 1 && this.state.shown === this.state.active)) this._tBT = tBT;
+    this._tB = this._tB == null ? this._tBT : this._tB + (this._tBT - this._tB) * 0.08;
+    const availH = Math.max(140, vh - 36 - this._tB - 28);
+    const W = narrow ? Math.min(vw - 48, availH * 1.62) : Math.min(dL - tR - gapX * 2, vh * 1.1);
+    const H = narrow ? Math.max(W / 1.62, Math.min(availH, W * 1.15)) : W / 1.62;
     this.cardH = narrow ? H : 0;
     const cx = narrow ? vw * 0.5 : (tR + dL) / 2;
     const cy = narrow ? vh - H / 2 - 36 : vh * 0.5;
@@ -214,7 +218,7 @@ class Component extends DCLogic {
         border: k === (this.state.shot || 0) ? p.accent : "rgba(255,255,255,0.18)"
       })),
       hasShots: !!(p.shots && p.shots.length > 1),
-      projects: PROJECTS.map((x, i) => ({ ...x, n: i + 1, go: () => this.goTo(i + 1), src: this.state.narrow ? x.mobImg : x.img, pos: this.state.narrow ? (x.title === "UFO" ? "30% 50%" : "50% 0%") : "50% 50%" })),
+      projects: PROJECTS.map((x, i) => ({ ...x, n: i + 1, go: () => this.goTo(i + 1), src: x.img, pos: "50% 50%", fit: this.state.narrow ? "contain" : "cover", cardBg: this.state.narrow ? x.bg : "#222" })),
       dots: SLIDES.map((x, i) => ({ title: x.title, go: () => this.goTo(i), dot: i === active ? a.accent : (a.light ? "rgba(10,15,46,0.22)" : "rgba(255,255,255,0.28)") })),
       isIntro: !!p.intro, isProject: !p.intro,
       hintLabel: this.state.narrow ? "Swipe up for case studies" : "Scroll for case studies",
@@ -225,7 +229,7 @@ class Component extends DCLogic {
       textMax: this.state.narrow ? "calc(100vw - 48px)" : "min(40vw,860px)",
       textAlign: this.state.narrow ? "flex-start" : "center",
       textPadTop: this.state.narrow ? "clamp(84px,12vh,120px)" : "0px",
-      textBottom: this.state.narrow ? "calc(min(100vw - 48px, 40vh) * 1.3 + 56px)" : "0px",
+      textBottom: this.state.narrow ? "calc((100vw - 48px) / 1.62 + 56px)" : "0px",
       titleSize: this.state.narrow ? "clamp(36px,10vw,56px)" : "clamp(44px,5.4vw,124px)",
       ink: a.light ? "#0a0f2e" : "#ffffff",
       inkSoft: a.light ? "rgba(10,15,46,0.72)" : "rgba(255,255,255,0.62)",
