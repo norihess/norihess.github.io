@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#0e0e10;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{opacity:.85}
+@keyframes npScrollHint{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{transform:translateY(0);opacity:0}}
+</style>
+</helmet>
+<div style="position:fixed;inset:0;overflow:hidden;font-family:'Helvetica Neue',Helvetica,sans-serif;color:#fff;background:{{ bg }};transition:background-color .9s ease;user-select:none">
+
+  <div ref="{{ reelRef }}" style="position:absolute;inset:0">
+    <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+      <div data-item="{{ p.n }}" onClick="{{ p.go }}" style="position:absolute;left:0;top:0;border-radius:4px;overflow:hidden;cursor:pointer;will-change:transform,width,height,filter;background:#222">
+        <img src="{{ p.src }}" alt="{{ p.title }}" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ p.pos }};display:block">
+        <div data-frame="1" style="position:absolute;inset:0;border-radius:4px;border:1.5px solid {{ p.accent }};pointer-events:none;opacity:0"></div>
+      </div>
+    </sc-for>
+  </div>
+
+  <header style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:clamp(28px,4.2vw,84px) clamp(24px,3.6vw,92px) 0;z-index:100;pointer-events:none">
+    <a href="index.html" aria-label="Nori Page home" style="display:block;pointer-events:auto"><img src="assets/logo.png" alt="Nori Page" style="width:clamp(44px,3.4vw,64px);height:auto;display:block;filter:{{ logoFilter }};transition:filter .6s"></a>
+    <nav style="display:flex;gap:clamp(20px,2.4vw,44px);pointer-events:auto">
+      <div style="position:relative;pointer-events:auto" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
+      <a href="index.html#work" onClick="{{ toWork }}" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ ink }};transition:color .6s;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></a>
+      <sc-if value="{{ ddShown }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;right:0;top:100%;padding-top:12px;z-index:60">
+          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="fury.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="sea-maui.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="vagabond-cruise.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="ufo.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="mexico-whale-shark.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="aster-lane.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="wanderlust.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="nerve.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a></div>
+        </div>
+      </sc-if>
+    </div>
+      <a href="about.html" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ inkSoft }};transition:color .6s">About</a>
+    </nav>
+  </header>
+
+  <div style="position:absolute;left:clamp(24px,3.6vw,92px);top:0;bottom:{{ textBottom }};display:flex;align-items:{{ textAlign }};padding-top:{{ textPadTop }};z-index:4;pointer-events:none;max-width:{{ textMax }}">
+    <div data-reeltext="1" style="display:grid;gap:clamp(16px,1.6vw,30px);opacity:{{ textOpacity }};transform:translateY({{ textShift }}px);transition:opacity .28s ease,transform .5s cubic-bezier(.2,.7,.2,1)">
+      <div style="font-weight:400;font-size:14px;font-weight:700;letter-spacing:0;text-transform:uppercase;white-space:pre;color:{{ accent }}">{{ counter }}</div>
+      <h1 style="margin:0;font-weight:700;font-size:{{ titleSize }};line-height:0.9;letter-spacing:-0.045em;text-wrap:balance;color:{{ ink }}">{{ title }}</h1>
+      <p style="margin:0;font-weight:300;font-size:clamp(17px,1.35vw,30px);line-height:1.55;color:{{ inkSoft }};max-width:30ch;text-wrap:pretty">{{ summary }}</p>
+      <sc-if value="{{ isProject }}" hint-placeholder-val="{{ false }}">
+        <a href="{{ href }}" style="display:flex;align-items:center;gap:22px;margin-top:clamp(12px,1.6vw,36px);font-weight:600;font-size:clamp(15px,1.15vw,24px);letter-spacing:0.02em;color:{{ accent }};pointer-events:auto;width:max-content">
+          <span>View case study</span><span>→</span>
+        </a>
+      </sc-if>
+      <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(12px,1.6vw,36px);pointer-events:auto">
+          <button onClick="{{ next }}" style="padding:12px 20px;border-radius:0;border:0;background:#0a0f2e;color:#fff;font-family:inherit;font-weight:600;font-size:1rem;letter-spacing:0;cursor:pointer">Explore case studies ↓</button>
+          <a href="about.html" style="padding:10.5px 20px;border-radius:0;border:1.5px solid {{ ink }};color:{{ ink }};font-weight:600;font-size:1rem;letter-spacing:0">About me</a>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <button onClick="{{ next }}" aria-label="Scroll to case studies" style="position:absolute;left:50%;bottom:clamp(20px,3.5vh,40px);transform:translateX(-50%);z-index:6;background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;font-family:inherit;color:{{ ink }};opacity:{{ hintOpacity }};pointer-events:{{ hintPointer }};transition:opacity .5s ease">
+    <span style="font-size:14px;font-weight:600;letter-spacing:0">{{ hintLabel }}</span>
+    {{ hintArrow }}
+  </button>
+  <nav data-reeldots="1" style="position:absolute;right:clamp(14px,1.8vw,48px);top:50%;transform:translateY(-50%);display:{{ dotsDisplay }};flex-direction:column;align-items:center;gap:14px;z-index:5">
+    <button onClick="{{ prev }}" aria-label="Previous" style="background:none;border:0;padding:8px;cursor:pointer;color:{{ accent }};font-size:16px;line-height:1">▲</button>
+    <div style="display:flex;flex-direction:column;gap:6px;margin:24px 0">
+      <sc-for list="{{ dots }}" as="p" hint-placeholder-count="7">
+        <button onClick="{{ p.go }}" aria-label="{{ p.title }}" style="width:24px;height:28px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center">
+          <span style="width:14px;height:14px;border-radius:50%;background:{{ p.dot }};transition:background-color .4s"></span>
+        </button>
+      </sc-for>
+    </div>
+    <button onClick="{{ next }}" aria-label="Next" style="background:none;border:0;padding:8px;cursor:pointer;color:{{ accent }};font-size:16px;line-height:1">▼</button>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;glow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;blur&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:30,&quot;step&quot;:1,&quot;default&quot;:14,&quot;tsType&quot;:&quot;number&quot;}}">
+const INTRO = { intro: true, title: "Nori Page", tag: "Senior Web Designer", summary: "I design responsive websites, design systems and developer build guides for tour, travel and hospitality brands.", bg: "#f5f3ee", accent: "#0a0f2e", light: true };
+const PROJECTS = [
+  { title: "Fury Water Adventures", mobImg: "assets/fury-full-mobile.webp", tag: "Web Design · Responsive", href: "fury.html", summary: "Responsive website redesign for a Florida Keys watersports company", img: "assets/fury-mockup.webp", bg: "#071a2e", accent: "#ff3b5c" },
+  { title: "Sea Maui", mobImg: "assets/sm-mobile-card.webp", href: "sea-maui.html", tag: "Web Design · Booking", summary: "Website redesign for a West Maui catamaran company offering snorkeling, sunset cruises and whale watching", img: "assets/sm-mockup.webp?v=2", bg: "#0b3a3b", accent: "#f7ea31" },
+  { title: "Vagabond Cruise", mobImg: "vagabond/assets/x-m1.webp", href: "vagabond-cruise.html", tag: "Web Design · Booking", summary: "Website redesign that made a large Hilton Head cruise and event catalog easier to explore and book", img: "assets/vb-mockup3.webp", bg: "#2c3077", accent: "#dfaf2c" },
+  { title: "UFO", mobImg: "assets/ufo-hero2.webp", href: "ufo.html", tag: "Web Design · Responsive", summary: "Two sister websites for UFO Fishing and UFO Parasail, one brand designed for two different adventures", img: "assets/ufo-mockup.webp", bg: "#072530", accent: "#97c93d" },
+  { title: "Mexico Whale Shark", mobImg: "assets/mws-full-mobile-2.webp", href: "mexico-whale-shark.html", tag: "Web Design · Booking", summary: "Website redesign for a whale shark tour company in Cancún and the Riviera Maya", img: "assets/reel-mws.webp", bg: "#020a17", accent: "#ffb938" },
+  { title: "Aster Lane Floral", mobImg: "assets/aster-home.webp", href: "aster-lane.html", tag: "Web Design · Brand Site", summary: "Website design for a Denver florist specializing in weddings and custom arrangements", img: "assets/reel-aster.webp", bg: "#1c2322", accent: "#a9c7c4" },
+  { title: "Wanderlust", mobImg: "assets/wl-s3.webp", href: "wanderlust.html", tag: "Brand Identity · Product Design", summary: "Mobile app for discovering campsites, parks and outdoor adventures across the U.S.", img: "assets/reel-wl.webp", bg: "#0f2624", accent: "#e0a52c" },
+  { title: "Nerve", mobImg: "assets/nv-s2.webp", href: "nerve.html", tag: "Product Design · Branding", summary: "Fitness app branding and UX, from user research and personas to final screens", img: "assets/reel-nerve.webp", bg: "#1a1228", accent: "#e0577a" }
+];
+
+const SLIDES = [INTRO, ...PROJECTS];
+class Component extends DCLogic {
+  ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
+  ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
+  ddToggle = e => { if (window.matchMedia("(hover: none)").matches && !this.state?.dd) { e.preventDefault(); this.setState({ dd: true }); } };
+  state = { active: 0, shown: 0, textOpacity: 1, textShift: 0 };
+  reelRef = React.createRef();
+  cur = 0; target = 0; lastWheel = 0;
+
+  componentDidMount() {
+    this.onResize = () => this.setState({ narrow: window.innerWidth < 860 });
+    this.onResize(); window.addEventListener("resize", this.onResize);
+    this.onWheel = e => {
+      e.preventDefault();
+      const n = SLIDES.length;
+      this.target = Math.max(0, Math.min(n - 1, this.target + e.deltaY * 0.0022));
+      clearTimeout(this.snapT);
+      this.snapT = setTimeout(() => this.goTo(Math.round(this.target)), 140);
+      this.sync(Math.round(this.target));
+    };
+    this.onKey = e => {
+      if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); this.goTo(this.state.active + 1); }
+      if (["ArrowUp", "ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); this.goTo(this.state.active - 1); }
+    };
+    this.onTouchStart = e => { this.touchY = e.touches[0].clientY; this.touchT = this.target; };
+    this.onTouchMove = e => {
+      const dy = this.touchY - e.touches[0].clientY;
+      this.target = Math.max(0, Math.min(SLIDES.length - 1, this.touchT + dy / 260));
+      this.sync(Math.round(this.target));
+    };
+    this.onTouchEnd = () => this.goTo(Math.round(this.target));
+    window.addEventListener("wheel", this.onWheel, { passive: false });
+    window.addEventListener("keydown", this.onKey);
+    window.addEventListener("touchstart", this.onTouchStart, { passive: true });
+    window.addEventListener("touchmove", this.onTouchMove, { passive: true });
+    window.addEventListener("touchend", this.onTouchEnd);
+    if (location.hash === "#work") { this.cur = this.target = 1; this.setState({ active: 1, shown: 1 }); }
+    const tick = () => { this.frame(); this.raf = requestAnimationFrame(tick); };
+    this.raf = requestAnimationFrame(tick);
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearTimeout(this.snapT); clearTimeout(this.textT);
+    window.removeEventListener("wheel", this.onWheel);
+    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener("keydown", this.onKey);
+    window.removeEventListener("touchstart", this.onTouchStart);
+    window.removeEventListener("touchmove", this.onTouchMove);
+    window.removeEventListener("touchend", this.onTouchEnd);
+  }
+
+  goTo(i) {
+    const n = SLIDES.length;
+    i = Math.max(0, Math.min(n - 1, i));
+    this.target = i;
+    this.sync(i);
+  }
+
+  sync(i) {
+    if (i === this.state.active) return;
+    const dir = i > this.state.active ? 1 : -1;
+    this.setState({ active: i, textOpacity: 0, textShift: -18 * dir });
+    clearTimeout(this.textT);
+    this.textT = setTimeout(() => {
+      this.setState({ shown: i, shot: 0, textShift: 18 * dir });
+      requestAnimationFrame(() => requestAnimationFrame(() => this.setState({ textOpacity: 1, textShift: 0 })));
+    }, 260);
+  }
+
+  frame() {
+    const root = this.reelRef.current;
+    if (!root) return;
+    this.cur += (this.target - this.cur) * 0.09;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const narrow = vw < 860;
+    const tEl = document.querySelector("[data-reeltext]"), dEl = document.querySelector("[data-reeldots]");
+    const rb = root.getBoundingClientRect();
+    let tR = vw * 0.38; if (tEl) { const tw = document.createTreeWalker(tEl, NodeFilter.SHOW_TEXT); let n, mx = 0; const rg = document.createRange(); while ((n = tw.nextNode())) { if (!n.textContent.trim()) continue; rg.selectNodeContents(n); for (const x of rg.getClientRects()) if (x.width > 0) mx = Math.max(mx, x.right); } if (mx) tR = mx - rb.left; }
+    if (this._tRT == null || (this.state.textOpacity === 1 && this.state.shown === this.state.active)) this._tRT = tR;
+    this._tR = this._tR == null ? this._tRT : this._tR + (this._tRT - this._tR) * 0.08;
+    tR = this._tR;
+    const dL = dEl ? dEl.getBoundingClientRect().left - rb.left : vw - 60;
+    const gapX = Math.max(24, (dL - tR) * 0.08);
+    const W = narrow ? Math.min(vw - 48, vh * 0.4) : Math.min(dL - tR - gapX * 2, vh * 1.1);
+    const H = narrow ? W * 1.3 : W / 1.62;
+    this.cardH = narrow ? H : 0;
+    const cx = narrow ? vw * 0.5 : (tR + dL) / 2;
+    const cy = narrow ? vh - H / 2 - 36 : vh * 0.5;
+    const blurMax = this.props.blur ?? 14;
+    const glow = this.props.glow ?? true;
+    const items = root.querySelectorAll("[data-item]");
+    items.forEach(el => {
+      const i = +el.dataset.item;
+      const d = i - this.cur, a = Math.abs(d), t = Math.min(a, 1), s = Math.sign(d);
+      const y = s * (a < 1 ? a * 0.7 * H : 0.7 * H + (a - 1) * 0.36 * H);
+      const w = W * (1 - t * 0.48), h = H * (1 - t * 0.71);
+      let op = Math.max(0, (1 - t * 0.35) * (a > 2.4 ? 1 - (a - 2.4) * 1.5 : 1));
+      if (narrow) op = s < 0 ? Math.max(0, 1 - a * 1.6) : Math.max(0, 1 - a * 0.9);
+      el.style.width = w + "px";
+      el.style.height = h + "px";
+      el.style.transform = `translate3d(${cx - w / 2}px, ${cy + y - h / 2}px, 0)`;
+      el.style.filter = t > 0.01 ? `blur(${t * blurMax}px) brightness(${1 - t * 0.25})` : "none";
+      el.style.opacity = op;
+      el.style.zIndex = String(10 - Math.round(a));
+      const p = SLIDES[i];
+      el.style.boxShadow = glow ? `0 0 ${60 * (1 - t)}px ${p.accent}${Math.round((1 - t) * 60).toString(16).padStart(2, "0")}` : "none";
+      const fr = el.querySelector("[data-frame]");
+      if (fr) fr.style.opacity = glow ? (1 - t) * 0.85 : 0;
+    });
+  }
+
+  renderVals() {
+    const { active, shown, textOpacity, textShift } = this.state;
+    const p = SLIDES[shown], a = SLIDES[active];
+    return {
+      ddShown: !!(this.state && this.state.dd), ddOpen: this.ddOpen, ddClose: this.ddClose, ddToggle: this.ddToggle,
+      reelRef: this.reelRef,
+      shots: (p.shots || []).map((src, k) => ({
+        src,
+        pick: () => this.setState({ shot: k }),
+        border: k === (this.state.shot || 0) ? p.accent : "rgba(255,255,255,0.18)"
+      })),
+      hasShots: !!(p.shots && p.shots.length > 1),
+      projects: PROJECTS.map((x, i) => ({ ...x, n: i + 1, go: () => this.goTo(i + 1), src: this.state.narrow ? x.mobImg : x.img, pos: this.state.narrow ? (x.title === "UFO" ? "30% 50%" : "50% 0%") : "50% 50%" })),
+      dots: SLIDES.map((x, i) => ({ title: x.title, go: () => this.goTo(i), dot: i === active ? a.accent : (a.light ? "rgba(10,15,46,0.22)" : "rgba(255,255,255,0.28)") })),
+      isIntro: !!p.intro, isProject: !p.intro,
+      hintLabel: this.state.narrow ? "Swipe up for case studies" : "Scroll for case studies",
+      hintOpacity: active === 0 && this.state.narrow ? 1 : 0,
+      hintPointer: active === 0 && this.state.narrow ? "auto" : "none",
+      hintArrow: this.hintArrow || (this.hintArrow = React.createElement("span", { style: { width: 26, height: 42, borderRadius: 13, border: "1.5px solid currentColor", display: "flex", justifyContent: "center", paddingTop: 7, boxSizing: "border-box" } }, React.createElement("span", { style: { width: 4, height: 9, borderRadius: 2, background: "currentColor", animation: "npScrollHint 1.6s ease-in-out infinite" } }))),
+      dotsDisplay: this.state.narrow ? "none" : "flex",
+      textMax: this.state.narrow ? "calc(100vw - 48px)" : "min(40vw,860px)",
+      textAlign: this.state.narrow ? "flex-start" : "center",
+      textPadTop: this.state.narrow ? "clamp(84px,12vh,120px)" : "0px",
+      textBottom: this.state.narrow ? "calc(min(100vw - 48px, 40vh) * 1.3 + 56px)" : "0px",
+      titleSize: this.state.narrow ? "clamp(36px,10vw,56px)" : "clamp(44px,5.4vw,124px)",
+      ink: a.light ? "#0a0f2e" : "#ffffff",
+      inkSoft: a.light ? "rgba(10,15,46,0.72)" : "rgba(255,255,255,0.62)",
+      logoFilter: a.light ? "none" : "brightness(0) invert(1)",
+      toWork: e => { e.preventDefault(); this.goTo(1); },
+      bg: a.bg,
+      accent: a.accent,
+      title: p.title,
+      summary: p.summary,
+      counter: p.intro ? p.tag : `${String(shown).padStart(2, "0")} / ${String(PROJECTS.length).padStart(2, "0")}   ·   ${p.tag || ""}`,
+      href: p.href || "#",
+      textOpacity, textShift,
+      prev: () => this.goTo(active - 1),
+      next: () => this.goTo(active + 1)
+    };
+  }
+}
+</script>
+</body>
+</html>
