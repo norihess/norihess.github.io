@@ -1,6 +1,6 @@
 # Nori Page portfolio
 
-Static site. Open `index.html`, or run a local server:
+Static site with clean URLs (`/ufo/`, `/about/`). Paths are root-relative, so preview it with a local server rather than opening files directly:
 
 ```
 python3 -m http.server 8000
