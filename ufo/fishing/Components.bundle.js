@@ -3378,7 +3378,7 @@ function FinalHomepageDesktop(_p = {}) {
       width: 1512,
       height: 720,
       overflow: "hidden",
-      background: "linear-gradient(0deg, rgba(0,0,0,0.62) 0.00%, rgba(0,0,0,0.217) 45.52%, rgba(0,0,0,0.0744) 63.51%), url(ufo/fishing/assets/x-hero.png) center / cover no-repeat"
+      background: "linear-gradient(0deg, rgba(0,0,0,0.62) 0.00%, rgba(0,0,0,0.217) 45.52%, rgba(0,0,0,0.0744) 63.51%), url(ufo/fishing/assets/x-hero.webp) center / cover no-repeat"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -15172,7 +15172,7 @@ function HomepageMobile(_p = {}) {
       top: 0,
       width: 390,
       height: 620,
-      background: "linear-gradient(0deg, rgba(0,0,0,0.62) 0.00%, rgba(0,0,0,0.217) 18.77%, rgba(0,0,0,0.0744) 26.19%), linear-gradient(0deg, rgb(0,61,102) 0.00%, rgba(0,122,204,0) 45.54%), url(ufo/fishing/assets/x-hero.png) center / cover no-repeat",
+      background: "linear-gradient(0deg, rgba(0,0,0,0.62) 0.00%, rgba(0,0,0,0.217) 18.77%, rgba(0,0,0,0.0744) 26.19%), linear-gradient(0deg, rgb(0,61,102) 0.00%, rgba(0,122,204,0) 45.54%), url(ufo/fishing/assets/x-hero.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,

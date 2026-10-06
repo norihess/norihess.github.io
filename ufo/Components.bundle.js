@@ -3377,7 +3377,7 @@ function FinalHomeDesktop(_p = {}) {
       width: 1512,
       height: 720,
       overflow: "hidden",
-      background: "linear-gradient(0deg, rgb(0,0,0) 0.00%, rgba(0,0,0,0.35) 15.11%, rgba(0,0,0,0.12) 42.69%), url(ufo/x1.jpg) center / cover no-repeat"
+      background: "linear-gradient(0deg, rgb(0,0,0) 0.00%, rgba(0,0,0,0.35) 15.11%, rgba(0,0,0,0.12) 42.69%), url(ufo/x1.webp) center / cover no-repeat"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -8953,7 +8953,7 @@ function FinalHomeMobile(_p = {}) {
       width: 393,
       height: 720,
       overflow: "hidden",
-      background: "linear-gradient(0deg, rgb(0,0,0) 0.00%, rgba(0,0,0,0.35) 15.11%, rgba(0,0,0,0.12) 42.69%), url(ufo/x1.jpg) center / cover no-repeat"
+      background: "linear-gradient(0deg, rgb(0,0,0) 0.00%, rgba(0,0,0,0.35) 15.11%, rgba(0,0,0,0.12) 42.69%), url(ufo/x1.webp) center / cover no-repeat"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
