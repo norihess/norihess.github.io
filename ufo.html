@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#072530;color:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+a:hover{color:#97c93d}
+</style>
+<script src="./image-slot.js"></script>
+<link rel="stylesheet" href="ufo/fig-tokens.css">
+<link rel="stylesheet" href="ufo/fig-assets.css">
+<link rel="stylesheet" href="ufo/fishing/fig-assets.css">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+</helmet>
+<span id="page-top"></span>
+<a href="#page-top" data-totop="1" aria-label="Back to top" style="position:fixed;right:clamp(16px,2.4vw,40px);bottom:clamp(16px,2.4vw,40px);z-index:30;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#97c93d;color:#0a0f2e;font-size:1rem;font-weight:700;opacity:0;pointer-events:none;transform:translateY(12px);transition:opacity .3s,transform .3s">↑</a>
+<div style="font-family:'Helvetica Neue',Helvetica,sans-serif;max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,64px)">
+
+<header style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(24px,3vw,48px) 0;font-weight:600;letter-spacing:0.04em">
+  <a href="index.html" aria-label="Nori Page home" style="display:block"><img src="assets/logo.png" alt="Nori Page" style="width:clamp(40px,3vw,56px);height:auto;display:block;filter:brightness(0) invert(1)"></a>
+  <nav style="display:flex;gap:clamp(20px,2.4vw,40px);font-size:14px">
+    <div style="position:relative;pointer-events:auto" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
+      <a href="index.html#work"  style="color:#fff;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></a>
+      <sc-if value="{{ ddShown }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;right:0;top:100%;padding-top:12px;z-index:60">
+          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="fury.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="sea-maui.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="vagabond-cruise.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="ufo.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:700;color:#fff;letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="mexico-whale-shark.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="aster-lane.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="wanderlust.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="nerve.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a></div>
+        </div>
+      </sc-if>
+    </div>
+    <a href="about.html" style="color:rgba(255,255,255,0.72)">About</a>
+  </nav>
+</header>
+
+<section data-screen-label="Hero" style="padding:clamp(40px,6vw,96px) 0 clamp(48px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,5vw,80px);align-items:center">
+  <div style="display:grid;gap:24px;min-width:0">
+  <span style="font-size:14px;font-weight:700;color:#97c93d">Web Design · Sister Sites · Responsive</span>
+  <h1 style="margin:0;font-weight:700;font-size:clamp(44px,6vw,96px);line-height:0.92;letter-spacing:-0.045em;text-wrap:balance">UFO Fishing and UFO Parasail</h1>
+  <h2 style="margin:0;font-weight:700;font-size:clamp(24px,2.6vw,40px);line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">One brand designed for two different adventures</h2>
+  <div style="display:grid;gap:14px"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">UFO Fishing and UFO Parasail share an ocean-focused brand, but their customers need help making different decisions.</p><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">I designed the websites as sister experiences: consistent enough to feel connected, but distinct enough to support separate audiences, booking journeys, and search strategies.</p></div>
+  <dl style="margin:16px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;border-top:2px solid currentColor;padding-top:16px">
+    <div><dt style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:8px">Role</dt><dd style="margin:0;font-size:1rem;line-height:1.5">Sr. Web Designer</dd></div>
+    <div><dt style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:8px">Timeline</dt><dd style="margin:0;font-size:1rem;line-height:1.5">[Confirm duration] · Discovery through design completion</dd></div>
+    <div style="grid-column:1/-1"><dt style="font-size:13px;font-weight:700;color:rgba(255,255,255,0.6);margin-bottom:8px">Scope</dt><dd style="margin:0;font-size:1rem;line-height:1.5">Sister-site strategy, responsive web design, activity selection, location routing, and shared visual system</dd></div>
+  </dl>
+  </div>
+  <div data-screen-label="Hero mockup" style="min-width:0;position:relative;aspect-ratio:5/4">
+    <div style="position:absolute;left:0;top:4%;width:72%;transform:rotate(-2deg);overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.5);border-radius:8px"><div style="height:28px;background:#e9ebee;display:flex;align-items:center;gap:7px;padding:0 12px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span></div><div style="aspect-ratio:16/10;overflow:hidden;pointer-events:none"><img src="assets/ufo-parasail-desktop.png" alt="UFO Parasail desktop homepage" style="width:100%;display:block"></div></div>
+    <div style="position:absolute;right:0;bottom:6%;width:72%;transform:rotate(2deg);overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.5);border-radius:8px"><div style="height:28px;background:#e9ebee;display:flex;align-items:center;gap:7px;padding:0 12px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span></div><div style="aspect-ratio:16/10;overflow:hidden;pointer-events:none"><img src="assets/ufo-fishing-desktop.png" alt="UFO Fishing desktop homepage" style="width:100%;display:block"></div></div>
+  </div>
+</section>
+
+<nav data-screen-label="Section nav" style="position:sticky;top:0;z-index:20;margin:0 calc(-1 * clamp(20px,4vw,64px));padding:0 clamp(20px,4vw,64px);background:#072530;border-bottom:2px solid currentColor">
+  <div style="display:flex;gap:clamp(20px,2.4vw,36px);overflow-x:auto;white-space:nowrap;font-size:14px;scrollbar-width:none">
+    <a href="#top" data-nav="top" style="flex:none;padding:14px 0;font-weight:700">Overview</a>
+    <a href="#s-01" data-nav="s-01" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">Shared system</a>
+    <a href="#s-02" data-nav="s-02" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">UFO Fishing</a>
+    <a href="#s-03" data-nav="s-03" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">UFO Parasail</a>
+    <a href="#s-04" data-nav="s-04" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">Key decisions</a>
+    <a href="#s-05" data-nav="s-05" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">Reflection</a>
+  </div>
+</nav>
+
+<section id="top" data-screen-label="Project overview" style="scroll-margin-top:72px;padding:clamp(72px,10vw,140px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(32px,4vw,64px)">
+<div style="display:grid;gap:16px;align-content:start;border-top:2px solid currentColor;padding-top:16px"><span style="font-size:14px;font-weight:700;color:#97c93d">The challenge</span><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);text-wrap:pretty">The websites needed to feel like part of the same brand without becoming copies of one another.</p><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);text-wrap:pretty">Fishing visitors needed help choosing a charter. Parasailing visitors needed to select an island, compare flights, and feel confident about safety before booking.</p></div>
+<div style="display:grid;gap:16px;align-content:start;border-top:2px solid currentColor;padding-top:16px"><span style="font-size:14px;font-weight:700;color:#97c93d">The approach</span><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);text-wrap:pretty">I created a shared foundation for color, typography, photography, components, and booking behavior, then adapted each site around its primary customer decision.</p></div>
+<div style="display:grid;gap:16px;align-content:start;border-top:2px solid currentColor;padding-top:16px"><span style="font-size:14px;font-weight:700;color:#97c93d">The outcome</span><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);text-wrap:pretty">Two connected experiences with a clear purpose:</p><ul style="margin:0;padding:0;list-style:none;display:grid;gap:8px"><li style="font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)"><strong style="color:#fff">UFO Fishing:</strong> Find the right fishing charter.</li><li style="font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)"><strong style="color:#fff">UFO Parasail:</strong> Choose an island and flight option.</li></ul></div>
+</section>
+
+<section id="s-01" data-screen-label="Shared system, distinct experiences" style="scroll-margin-top:0px;display:grid;gap:clamp(32px,4vw,56px);padding:clamp(72px,10vw,140px) 0;background:#051b23;box-shadow:0 0 0 100vmax #051b23;clip-path:inset(0 -100vmax)">
+<div style="display:grid;gap:14px;border-top:2px solid #97c93d;padding-top:20px"><h2 style="margin:0;font-size:clamp(36px,4.4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.035em;color:#fff;text-wrap:balance">Shared system, distinct experiences</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">Both websites use:</p><ul style="margin:0;padding:0;list-style:none;display:grid;max-width:64ch"><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Ocean-inspired color</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Friendly, modern typography</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Authentic guest photography</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Rounded comparison cards</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Clear trust content</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">High-contrast booking actions</li><li style="padding:12px 0;border-top:1px solid rgba(255,255,255,0.2);font-size:1rem;line-height:1.5;color:rgba(255,255,255,0.78)">Mobile-first information hierarchy</li></ul></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">UFO Fishing feels deeper and more exploratory, using imagery of catches, crew members, families, and life on the water.</p><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">UFO Parasail feels lighter and more open, using sky, coastline, horizon, and in-flight imagery to communicate the feeling of seeing Hawaii from above.</p></div></div><div data-screen-label="Sister sites on mobile" style="display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,96px);justify-content:center;align-items:flex-start">
+  <figure style="margin:0;display:grid;gap:12px;justify-items:center"><div style="width:clamp(220px,20vw,280px);padding:10px;border-radius:40px;background:#111;box-shadow:0 24px 60px rgba(0,0,0,0.45)"><div style="position:relative;aspect-ratio:393/800;border-radius:31px;overflow:hidden;background:#fff;container-type:inline-size"><div data-autoscroll="1" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none"><img src="assets/ufo-fishing-mobile.png" alt="UFO Fishing mobile homepage" style="width:100%;display:block"></div></div></div><figcaption style="font-size:14px;color:rgba(255,255,255,0.6)">UFO Fishing · deeper, exploratory</figcaption></figure>
+  <figure style="margin:0;display:grid;gap:12px;justify-items:center"><div style="width:clamp(220px,20vw,280px);padding:10px;border-radius:40px;background:#111;box-shadow:0 24px 60px rgba(0,0,0,0.45)"><div style="position:relative;aspect-ratio:393/800;border-radius:31px;overflow:hidden;background:#fff;container-type:inline-size"><div data-autoscroll="1" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none"><img src="assets/ufo-parasail-mobile.png" alt="UFO Parasail mobile homepage" style="width:100%;display:block"></div></div></div><figcaption style="font-size:14px;color:rgba(255,255,255,0.6)">UFO Parasail · lighter, open</figcaption></figure>
+</div>
+</section>
+
+<section id="s-02" data-screen-label="UFO Fishing" style="scroll-margin-top:0px;display:grid;gap:clamp(32px,4vw,56px);padding:clamp(72px,10vw,140px) 0">
+<div style="display:grid;gap:14px;border-top:2px solid #97c93d;padding-top:20px"><h2 style="margin:0;font-size:clamp(36px,4.4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.035em;color:#fff;text-wrap:balance">UFO Fishing</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">The fishing homepage was designed around one customer question:</p><p style="margin:0;font-size:clamp(24px,2.6vw,40px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#97c93d">Which trip is right for me?</p></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">Guided pathways, charter comparisons, and a seasonal What’s Biting feature helped visitors choose based on experience level, group type, trip length, and fishing goals.</p></div></div><figure style="margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-width:0"><div style="overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.4)"><div style="height:28px;background:#e9ebee;display:flex;align-items:center;gap:7px;padding:0 12px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span></div><div data-autoscroll="1" style="height:min(70vh,680px);overflow-y:auto;overflow-x:hidden;scrollbar-width:none"><img src="assets/ufo-fishing-desktop.png" alt="UFO Fishing desktop homepage" style="width:100%;display:block"></div></div><figcaption style="font-size:14px;color:rgba(255,255,255,0.6)">UFO Fishing homepage. Scroll inside the frame.</figcaption></figure>
+</section>
+
+<section id="s-03" data-screen-label="UFO Parasail" style="scroll-margin-top:0px;display:grid;gap:clamp(32px,4vw,56px);padding:clamp(72px,10vw,140px) 0;background:#051b23;box-shadow:0 0 0 100vmax #051b23;clip-path:inset(0 -100vmax)">
+<div style="display:grid;gap:14px;border-top:2px solid #97c93d;padding-top:20px"><h2 style="margin:0;font-size:clamp(36px,4.4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.035em;color:#fff;text-wrap:balance">UFO Parasail</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">The parasailing homepage began with a simpler decision:</p><p style="margin:0;font-size:clamp(24px,2.6vw,40px);font-weight:700;line-height:1.2;letter-spacing:-0.02em;color:#97c93d">Maui or Kona?</p></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">After choosing an island, visitors could compare the 800-foot and 1,200-foot flights, review participation requirements, understand the boarding process, and check availability.</p><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">Safety information, reviews, and answers for first-time flyers appeared near the booking decision rather than being buried farther down the page.</p></div></div><figure style="margin:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;min-width:0"><div style="overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.4)"><div style="height:28px;background:#e9ebee;display:flex;align-items:center;gap:7px;padding:0 12px"><span style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></span><span style="width:9px;height:9px;border-radius:50%;background:#febc2e"></span><span style="width:9px;height:9px;border-radius:50%;background:#28c840"></span></div><div data-autoscroll="1" style="height:min(70vh,680px);overflow-y:auto;overflow-x:hidden;scrollbar-width:none"><img src="assets/ufo-parasail-desktop.png" alt="UFO Parasail desktop homepage" style="width:100%;display:block"></div></div><figcaption style="font-size:14px;color:rgba(255,255,255,0.6)">UFO Parasail homepage. Scroll inside the frame.</figcaption></figure>
+</section>
+
+<section id="s-04" data-screen-label="Key design decisions" style="scroll-margin-top:0px;display:grid;gap:clamp(32px,4vw,56px);padding:clamp(72px,10vw,140px) 0">
+<div style="display:grid;gap:14px;border-top:2px solid #97c93d;padding-top:20px"><h2 style="margin:0;font-size:clamp(36px,4.4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.035em;color:#fff;text-wrap:balance">Key design decisions</h2></div><article style="display:grid;gap:32px;border-top:1px solid rgba(255,255,255,0.2);padding-top:24px"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><span style="font-size:14px;font-weight:700;color:#97c93d">01</span><h3 style="margin:0;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">Design around the customer’s first decision</h3></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">Fishing starts with trip selection. Parasailing starts with location. Each website’s structure reflects that difference.</p></div></div></article><article style="display:grid;gap:32px;border-top:1px solid rgba(255,255,255,0.2);padding-top:24px"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><span style="font-size:14px;font-weight:700;color:#97c93d">02</span><h3 style="margin:0;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">Keep booking information early</h3></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">Mobile visitors began dropping off around 20–30% scroll depth, so comparison details, trust signals, and booking actions were placed near the top.</p></div></div></article><article style="display:grid;gap:32px;border-top:1px solid rgba(255,255,255,0.2);padding-top:24px"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><span style="font-size:14px;font-weight:700;color:#97c93d">03</span><h3 style="margin:0;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;text-wrap:balance">Connect the brands without combining them</h3></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">The websites share recognizable visual and interaction patterns while maintaining separate domains, content, and search targets.</p></div></div></article>
+</section>
+
+<section id="s-05" data-screen-label="Reflection" style="scroll-margin-top:0px;display:grid;gap:clamp(32px,4vw,56px);padding:clamp(72px,10vw,140px) 0;background:#051b23;box-shadow:0 0 0 100vmax #051b23;clip-path:inset(0 -100vmax)">
+<div style="display:grid;gap:14px;border-top:2px solid #97c93d;padding-top:20px"><h2 style="margin:0;font-size:clamp(36px,4.4vw,64px);font-weight:700;line-height:1;letter-spacing:-0.035em;color:#fff;text-wrap:balance">Reflection</h2></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(32px,5vw,80px);align-items:start"><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">The goal was not to make two identical websites. It was to create a shared design language that could flex around two different customer journeys.</p></div><div style="display:grid;gap:20px;align-content:start"><p style="margin:0;font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78);max-width:64ch;text-wrap:pretty">The result gives UFO a more consistent digital brand while making each adventure easier to understand and book.</p></div></div>
+</section>
+
+<a href="mexico-whale-shark.html" data-screen-label="Next project" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(24px,4vw,64px);align-items:center;border-top:2px solid currentColor;padding:32px 0 clamp(48px,6vw,96px)" style-hover="color:#fff">
+  <div style="display:grid;gap:12px">
+    <span style="font-size:14px;font-weight:700;color:rgba(255,255,255,0.6)">Next project</span>
+    <span style="font-size:clamp(32px,4.4vw,72px);font-weight:700;letter-spacing:-0.04em;line-height:1">Mexico Whale Shark</span>
+    <span style="font-size:1rem;line-height:1.6;color:rgba(255,255,255,0.78)">Web Design · Booking</span>
+    <span style="font-size:15px;font-weight:700;color:#97c93d;margin-top:8px">View case study →</span>
+  </div>
+  <div style="justify-self:end;width:min(100%,480px);overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(0,0,0,0.45)">
+    <div style="height:24px;background:#e9ebee;display:flex;align-items:center;gap:6px;padding:0 10px"><span style="width:8px;height:8px;border-radius:50%;background:#ff5f57"></span><span style="width:8px;height:8px;border-radius:50%;background:#febc2e"></span><span style="width:8px;height:8px;border-radius:50%;background:#28c840"></span></div>
+    <div style="aspect-ratio:16/10;overflow:hidden"><img src="assets/mws-4.png" alt="Mexico Whale Shark" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s" style-hover="transform:scale(1.03)"></div>
+  </div>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;desktopVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobileVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;desktopPrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobilePrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
+class Component extends DCLogic {
+  ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
+  ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
+  ddToggle = e => { if (window.matchMedia("(hover: none)").matches && !this.state?.dd) { e.preventDefault(); this.setState({ dd: true }); } };
+  componentDidMount() {
+    const links = [...document.querySelectorAll("[data-nav]")];
+    const secs = links.map(a => document.getElementById(a.dataset.nav)).filter(Boolean);
+    let cur = null;
+    this.onSpy = () => {
+      let id = secs[0] && secs[0].id;
+      secs.forEach(s => { if (s.getBoundingClientRect().top <= 120) id = s.id; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4 && secs.length) id = secs[secs.length - 1].id;
+      if (id === cur) return; cur = id;
+      links.forEach(a => { const on = a.dataset.nav === id; a.style.color = on ? "#fff" : "rgba(255,255,255,0.6)"; a.style.fontWeight = on ? "700" : "400"; if (on) a.parentElement.scrollTo({ left: a.offsetLeft - 20, behavior: "smooth" }); });
+    };
+    window.addEventListener("scroll", this.onSpy, { passive: true }); this.onSpy();
+    this.cloneNav = () => document.querySelectorAll("[data-navclone]").forEach(w => { const host = w.querySelector("[data-vfit]"); if (!host || host.childElementCount) return; const src = w.previousElementSibling && w.previousElementSibling.querySelector("[data-vfit] > *"); if (!src || !src.querySelector("span")) return; const c = src.cloneNode(true); c.style.height = (+w.dataset.cliph + 40) + "px"; c.style.overflow = "hidden"; host.appendChild(c); });
+    this.fit = () => { document.querySelectorAll('[data-screen-label="Sister sites on mobile"] [data-autoscroll] div').forEach(d => { const t = d.textContent.replace(/\s+/g, " ").trim(); if (d.offsetWidth > 300 && d.offsetHeight < 90 && ((t === "Book Now" && d.offsetHeight >= 55) || /^View Maui ?View Kona$/.test(t))) d.style.visibility = "hidden"; }); this.cloneNav(); document.querySelectorAll("[data-vfit]").forEach(el => { const w = +el.dataset.vfit; const pw = el.parentElement.clientWidth; if (pw) el.style.zoom = pw / w; }); document.querySelectorAll("[data-cliph]").forEach(el => { const c = el.querySelector("[data-vfit]"); const z = c ? parseFloat(c.style.zoom) || 1 : 1; el.style.height = (+el.dataset.cliph * z) + "px"; }); };
+    this.startAuto();
+    this.ro = new ResizeObserver(() => requestAnimationFrame(this.fit)); document.querySelectorAll("[data-vfit]").forEach(el => this.ro.observe(el.parentElement)); this.fit(); this.fitT = setInterval(this.fit, 500); setTimeout(() => clearInterval(this.fitT), 6000);
+    this.onScroll = () => {
+      const b = document.querySelector("[data-totop]"); if (!b) return;
+      const show = window.scrollY > window.innerHeight * 0.8 && window.innerWidth >= 860;
+      b.style.opacity = show ? "1" : "0"; b.style.pointerEvents = show ? "auto" : "none"; b.style.transform = show ? "none" : "translateY(12px)";
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true }); window.addEventListener("resize", this.onScroll); this.onScroll();
+  }
+  startAuto() {
+    if (this.autoOn || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) return; this.autoOn = true;
+    const els = [...document.querySelectorAll("[data-autoscroll]")];
+    els.forEach(el => { el.addEventListener("mouseenter", () => el._hold = true); el.addEventListener("mouseleave", () => { el._hold = false; el._pos = el.scrollTop; }); el.addEventListener("touchstart", () => el._hold = true, { passive: true }); el._pos = 0; el._wait = 60; });
+    const vis = new Map(); this.vio = new IntersectionObserver(es => es.forEach(x => vis.set(x.target, x.isIntersecting))); els.forEach(el => this.vio.observe(el));
+    const tick = () => { els.forEach(el => { if (el._hold || !vis.get(el)) return; const max = el.scrollHeight - el.clientHeight; if (max <= 0) return; if (el._wait > 0) { el._wait--; return; } el._pos += max / 4200; if (el._pos >= max) { el._pos = 0; el._wait = 150; } el.scrollTop = el._pos; }); this.raf = requestAnimationFrame(tick); };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); this.ro && this.ro.disconnect(); window.removeEventListener("scroll", this.onSpy); window.removeEventListener("scroll", this.onScroll); window.removeEventListener("resize", this.onScroll); }
+  renderVals() {
+    const p = this.props;
+    const dv = p.desktopVideo || "", mv = p.mobileVideo || "", dl = p.desktopPrototypeUrl || "", ml = p.mobilePrototypeUrl || "";
+    return {
+      ddShown: !!(this.state && this.state.dd), ddOpen: this.ddOpen, ddClose: this.ddClose, ddToggle: this.ddToggle,
+      deskVideo: dv, hasDeskVideo: !!dv, noDeskVideo: !dv,
+      mobVideo: mv, hasMobVideo: !!mv, noMobVideo: !mv,
+      deskLink: dl, hasDeskLink: !!dl, mobLink: ml, hasMobLink: !!ml
+    };
+  }
+}
+
+</script>
+</body>
+</html>
