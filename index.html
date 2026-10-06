@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<link rel="canonical" href="https://noripage.com/">
+<script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -27,17 +28,17 @@ a:hover{opacity:.85}
   </div>
 
   <header style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:clamp(28px,4.2vw,84px) clamp(24px,3.6vw,92px) 0;z-index:100;pointer-events:none">
-    <a href="index.html" aria-label="Nori Page home" style="display:block;pointer-events:auto"><img src="assets/logo.png" alt="Nori Page" style="width:clamp(44px,3.4vw,64px);height:auto;display:block;filter:{{ logoFilter }};transition:filter .6s"></a>
+    <a href="/" aria-label="Nori Page home" style="display:block;pointer-events:auto"><img src="/assets/logo.png" alt="Nori Page" style="width:clamp(44px,3.4vw,64px);height:auto;display:block;filter:{{ logoFilter }};transition:filter .6s"></a>
     <nav style="display:flex;gap:clamp(20px,2.4vw,44px);pointer-events:auto">
       <div style="position:relative;pointer-events:auto" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
-      <a href="index.html#work" onClick="{{ toWork }}" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ ink }};transition:color .6s;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></a>
+      <a href="/#work" onClick="{{ toWork }}" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ ink }};transition:color .6s;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></a>
       <sc-if value="{{ ddShown }}" hint-placeholder-val="{{ false }}">
         <div style="position:absolute;right:0;top:100%;padding-top:12px;z-index:60">
-          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="fury.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="sea-maui.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="vagabond-cruise.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="ufo.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="mexico-whale-shark.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="aster-lane.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="wanderlust.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="nerve.html" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a></div>
+          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="/fury/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="/sea-maui/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="/vagabond-cruise/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="/ufo/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="/mexico-whale-shark/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="/aster-lane/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="/wanderlust/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="/nerve/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a></div>
         </div>
       </sc-if>
     </div>
-      <a href="about.html" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ inkSoft }};transition:color .6s">About</a>
+      <a href="/about/" style="font-weight:600;font-size:clamp(14px,1vw,20px);letter-spacing:0.06em;color:{{ inkSoft }};transition:color .6s">About</a>
     </nav>
   </header>
 
@@ -54,7 +55,7 @@ a:hover{opacity:.85}
       <sc-if value="{{ isIntro }}" hint-placeholder-val="{{ true }}">
         <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(12px,1.6vw,36px);pointer-events:auto">
           <button onClick="{{ next }}" style="padding:12px 20px;border-radius:0;border:0;background:#0a0f2e;color:#fff;font-family:inherit;font-weight:600;font-size:1rem;letter-spacing:0;cursor:pointer">Explore case studies ↓</button>
-          <a href="about.html" style="padding:10.5px 20px;border-radius:0;border:1.5px solid {{ ink }};color:{{ ink }};font-weight:600;font-size:1rem;letter-spacing:0">About me</a>
+          <a href="/about/" style="padding:10.5px 20px;border-radius:0;border:1.5px solid {{ ink }};color:{{ ink }};font-weight:600;font-size:1rem;letter-spacing:0">About me</a>
         </div>
       </sc-if>
     </div>
@@ -80,14 +81,14 @@ a:hover{opacity:.85}
 <script type="text/x-dc" data-dc-script data-props="{&quot;glow&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;blur&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:0,&quot;max&quot;:30,&quot;step&quot;:1,&quot;default&quot;:14,&quot;tsType&quot;:&quot;number&quot;}}">
 const INTRO = { intro: true, title: "Nori Page", tag: "Senior Web Designer", summary: "I design responsive websites, design systems and developer build guides for tour, travel and hospitality brands.", bg: "#f5f3ee", accent: "#0a0f2e", light: true };
 const PROJECTS = [
-  { title: "Fury Water Adventures", mobImg: "assets/fury-full-mobile.webp", tag: "Web Design · Responsive", href: "fury.html", summary: "Responsive website redesign for a Florida Keys watersports company", img: "assets/fury-mockup.webp", bg: "#071a2e", accent: "#ff3b5c" },
-  { title: "Sea Maui", mobImg: "assets/sm-mobile-card.webp", href: "sea-maui.html", tag: "Web Design · Booking", summary: "Website redesign for a West Maui catamaran company offering snorkeling, sunset cruises and whale watching", img: "assets/sm-mockup.webp?v=2", bg: "#0b3a3b", accent: "#f7ea31" },
-  { title: "Vagabond Cruise", mobImg: "vagabond/assets/x-m1.webp", href: "vagabond-cruise.html", tag: "Web Design · Booking", summary: "Website redesign that made a large Hilton Head cruise and event catalog easier to explore and book", img: "assets/vb-mockup3.webp", bg: "#2c3077", accent: "#dfaf2c" },
-  { title: "UFO", mobImg: "assets/ufo-hero2.webp", href: "ufo.html", tag: "Web Design · Responsive", summary: "Two sister websites for UFO Fishing and UFO Parasail, one brand designed for two different adventures", img: "assets/ufo-mockup.webp", bg: "#072530", accent: "#97c93d" },
-  { title: "Mexico Whale Shark", mobImg: "assets/mws-full-mobile-2.webp", href: "mexico-whale-shark.html", tag: "Web Design · Booking", summary: "Website redesign for a whale shark tour company in Cancún and the Riviera Maya", img: "assets/reel-mws.webp", bg: "#020a17", accent: "#ffb938" },
-  { title: "Aster Lane Floral", mobImg: "assets/aster-home.webp", href: "aster-lane.html", tag: "Web Design · Brand Site", summary: "Website design for a Denver florist specializing in weddings and custom arrangements", img: "assets/reel-aster.webp", bg: "#1c2322", accent: "#a9c7c4" },
-  { title: "Wanderlust", mobImg: "assets/wl-s3.webp", href: "wanderlust.html", tag: "Brand Identity · Product Design", summary: "Mobile app for discovering campsites, parks and outdoor adventures across the U.S.", img: "assets/reel-wl.webp", bg: "#0f2624", accent: "#e0a52c" },
-  { title: "Nerve", mobImg: "assets/nv-s2.webp", href: "nerve.html", tag: "Product Design · Branding", summary: "Fitness app branding and UX, from user research and personas to final screens", img: "assets/reel-nerve.webp", bg: "#1a1228", accent: "#e0577a" }
+  { title: "Fury Water Adventures", mobImg: "/assets/fury-full-mobile.webp", tag: "Web Design · Responsive", href: "/fury/", summary: "Responsive website redesign for a Florida Keys watersports company", img: "/assets/fury-mockup.webp", bg: "#071a2e", accent: "#ff3b5c" },
+  { title: "Sea Maui", mobImg: "/assets/sm-mobile-card.webp", href: "/sea-maui/", tag: "Web Design · Booking", summary: "Website redesign for a West Maui catamaran company offering snorkeling, sunset cruises and whale watching", img: "/assets/sm-mockup.webp?v=2", bg: "#0b3a3b", accent: "#f7ea31" },
+  { title: "Vagabond Cruise", mobImg: "/vagabond/assets/x-m1.webp", href: "/vagabond-cruise/", tag: "Web Design · Booking", summary: "Website redesign that made a large Hilton Head cruise and event catalog easier to explore and book", img: "/assets/vb-mockup3.webp", bg: "#2c3077", accent: "#dfaf2c" },
+  { title: "UFO", mobImg: "/assets/ufo-hero2.webp", href: "/ufo/", tag: "Web Design · Responsive", summary: "Two sister websites for UFO Fishing and UFO Parasail, one brand designed for two different adventures", img: "/assets/ufo-mockup.webp", bg: "#072530", accent: "#97c93d" },
+  { title: "Mexico Whale Shark", mobImg: "/assets/mws-full-mobile-2.webp", href: "/mexico-whale-shark/", tag: "Web Design · Booking", summary: "Website redesign for a whale shark tour company in Cancún and the Riviera Maya", img: "/assets/reel-mws.webp", bg: "#020a17", accent: "#ffb938" },
+  { title: "Aster Lane Floral", mobImg: "/assets/aster-home.webp", href: "/aster-lane/", tag: "Web Design · Brand Site", summary: "Website design for a Denver florist specializing in weddings and custom arrangements", img: "/assets/reel-aster.webp", bg: "#1c2322", accent: "#a9c7c4" },
+  { title: "Wanderlust", mobImg: "/assets/wl-s3.webp", href: "/wanderlust/", tag: "Brand Identity · Product Design", summary: "Mobile app for discovering campsites, parks and outdoor adventures across the U.S.", img: "/assets/reel-wl.webp", bg: "#0f2624", accent: "#e0a52c" },
+  { title: "Nerve", mobImg: "/assets/nv-s2.webp", href: "/nerve/", tag: "Product Design · Branding", summary: "Fitness app branding and UX, from user research and personas to final screens", img: "/assets/reel-nerve.webp", bg: "#1a1228", accent: "#e0577a" }
 ];
 
 const SLIDES = [INTRO, ...PROJECTS];
@@ -125,7 +126,7 @@ class Component extends DCLogic {
       if (t && Math.abs(t.clientY - this.touchY) < 10) {
         const el = e.target.closest ? e.target : e.target.parentElement;
         const item = el && el.closest("[data-item]"), link = el && el.closest("a[href]");
-        if (link && !link.getAttribute("href").startsWith("#") && !(link.getAttribute("href") === "index.html#work")) { e.preventDefault(); window.location.href = link.href; return; }
+        if (link && !link.getAttribute("href").startsWith("#") && !(link.getAttribute("href") === "/#work")) { e.preventDefault(); window.location.href = link.href; return; }
         if (item) { const i = +item.dataset.item; e.preventDefault(); if (this.state.active === i) window.location.href = PROJECTS[i - 1].href; else this.goTo(i); return; }
       }
       this.goTo(Math.round(this.target));
