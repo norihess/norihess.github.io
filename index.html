@@ -120,12 +120,21 @@ class Component extends DCLogic {
       this.target = Math.max(0, Math.min(SLIDES.length - 1, this.touchT + dy / 260));
       this.sync(Math.round(this.target));
     };
-    this.onTouchEnd = () => this.goTo(Math.round(this.target));
+    this.onTouchEnd = e => {
+      const t = e.changedTouches && e.changedTouches[0];
+      if (t && Math.abs(t.clientY - this.touchY) < 10) {
+        const el = e.target.closest ? e.target : e.target.parentElement;
+        const item = el && el.closest("[data-item]"), link = el && el.closest("a[href]");
+        if (link && !link.getAttribute("href").startsWith("#") && !(link.getAttribute("href") === "index.html#work")) { e.preventDefault(); window.location.href = link.href; return; }
+        if (item) { const i = +item.dataset.item; e.preventDefault(); if (this.state.active === i) window.location.href = PROJECTS[i - 1].href; else this.goTo(i); return; }
+      }
+      this.goTo(Math.round(this.target));
+    };
     window.addEventListener("wheel", this.onWheel, { passive: false });
     window.addEventListener("keydown", this.onKey);
     window.addEventListener("touchstart", this.onTouchStart, { passive: true });
     window.addEventListener("touchmove", this.onTouchMove, { passive: true });
-    window.addEventListener("touchend", this.onTouchEnd);
+    window.addEventListener("touchend", this.onTouchEnd, { passive: false });
     if (location.hash === "#work") { this.cur = this.target = 1; this.setState({ active: 1, shown: 1 }); }
     const tick = () => { this.frame(); this.raf = requestAnimationFrame(tick); };
     this.raf = requestAnimationFrame(tick);
