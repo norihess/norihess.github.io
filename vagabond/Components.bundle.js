@@ -2637,7 +2637,7 @@ function HomeDesktop(_p = {}) {
       width: 1512,
       height: 528,
       overflow: "hidden",
-      background: "linear-gradient(90deg, rgba(1,11,19,0.35) 0%, rgba(1,11,19,0) 60%), url(vagabond/assets/x-sav.webp) center / cover no-repeat",
+      background: "linear-gradient(90deg, rgba(1,11,19,0.35) 0%, rgba(1,11,19,0) 60%), url(/vagabond/assets/x-sav.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       padding: "0px 75px 0px 75px",
@@ -2949,7 +2949,7 @@ function HomeDesktop(_p = {}) {
     style: {
       position: "relative",
       height: 292,
-      background: "url(vagabond/assets/x-m2.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-m2.webp) center / cover no-repeat",
       overflow: "hidden",
       display: "flex",
       flexDirection: "column",
@@ -3212,7 +3212,7 @@ function HomeDesktop(_p = {}) {
     style: {
       position: "relative",
       height: 292,
-      background: "url(vagabond/assets/x-m3.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-m3.webp) center / cover no-repeat",
       overflow: "hidden",
       display: "flex",
       flexDirection: "column",
@@ -3721,7 +3721,7 @@ function HomeDesktop(_p = {}) {
       position: "relative",
       width: 431,
       height: 401,
-      background: "linear-gradient(180deg, rgb(1,11,19) 0.00%, rgba(1,11,19,0) 56.86%), url(vagabond/assets/x-v1.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgb(1,11,19) 0.00%, rgba(1,11,19,0) 56.86%), url(/vagabond/assets/x-v1.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -3874,7 +3874,7 @@ function HomeDesktop(_p = {}) {
       position: "relative",
       width: 432,
       height: 401,
-      background: "linear-gradient(180deg, rgb(1,11,19) -0.00%, rgba(1,11,19,0) 56.86%), url(vagabond/assets/x-v2.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgb(1,11,19) -0.00%, rgba(1,11,19,0) 56.86%), url(/vagabond/assets/x-v2.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -4027,7 +4027,7 @@ function HomeDesktop(_p = {}) {
       position: "relative",
       width: 431,
       height: 401,
-      background: "linear-gradient(180deg, rgb(1,11,19) 0.00%, rgba(1,11,19,0) 56.86%), url(vagabond/assets/x-v3.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgb(1,11,19) 0.00%, rgba(1,11,19,0) 56.86%), url(/vagabond/assets/x-v3.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -4993,7 +4993,7 @@ function HomeDesktop(_p = {}) {
     style: {
       position: "relative",
       height: 200,
-      background: "url(vagabond/assets/x-p1.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-p1.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 8,
@@ -5264,7 +5264,7 @@ function HomeDesktop(_p = {}) {
     style: {
       position: "relative",
       height: 200,
-      background: "url(vagabond/assets/x-p2.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-p2.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -5537,7 +5537,7 @@ function HomeDesktop(_p = {}) {
     style: {
       position: "relative",
       height: 200,
-      background: "url(vagabond/assets/x-p3.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-p3.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -6445,7 +6445,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 240,
-      background: "url(vagabond/assets/68d2a901210e19c3.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/68d2a901210e19c3.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 20,
@@ -6929,7 +6929,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 238,
-      background: "url(vagabond/assets/x-sav.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-sav.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 20,
@@ -7142,7 +7142,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 152,
-      background: "url(vagabond/assets/x-p1.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-p1.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 8,
@@ -7415,7 +7415,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 152,
-      background: "url(vagabond/assets/x-p3.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-p3.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 10,
@@ -7672,7 +7672,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 560,
-      background: "linear-gradient(0deg, rgba(7,10,16,0.898) 0.00%, rgba(7,10,16,0.7529) 25.11%, rgba(7,10,16,0) 60.15%), url(vagabond/assets/x-m1.webp) center / cover no-repeat",
+      background: "linear-gradient(0deg, rgba(7,10,16,0.898) 0.00%, rgba(7,10,16,0.7529) 25.11%, rgba(7,10,16,0) 60.15%), url(/vagabond/assets/x-m1.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       padding: "25px 16px 25px 16px",
@@ -7924,7 +7924,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 180,
-      background: "url(vagabond/assets/x-m2.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-m2.webp) center / cover no-repeat",
       flexShrink: 0,
       alignSelf: "stretch"
     }
@@ -8042,7 +8042,7 @@ function HomepageV4Mobile(_p = {}) {
     style: {
       position: "relative",
       height: 180,
-      background: "url(vagabond/assets/x-m3.webp) center / cover no-repeat",
+      background: "url(/vagabond/assets/x-m3.webp) center / cover no-repeat",
       flexShrink: 0,
       alignSelf: "stretch"
     }
@@ -8257,7 +8257,7 @@ function HomepageV4Mobile(_p = {}) {
       position: "relative",
       height: 212,
       overflow: "hidden",
-      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(vagabond/assets/x-v1.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(/vagabond/assets/x-v1.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 16,
@@ -8375,7 +8375,7 @@ function HomepageV4Mobile(_p = {}) {
       position: "relative",
       height: 212,
       overflow: "hidden",
-      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(vagabond/assets/x-v2.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(/vagabond/assets/x-v2.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 16,
@@ -8493,7 +8493,7 @@ function HomepageV4Mobile(_p = {}) {
       position: "relative",
       height: 212,
       overflow: "hidden",
-      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(vagabond/assets/x-v3.webp) center / cover no-repeat",
+      background: "linear-gradient(180deg, rgba(1,11,19,0.8157) 0.00%, rgba(1,11,19,0) 60.00%), url(/vagabond/assets/x-v3.webp) center / cover no-repeat",
       display: "flex",
       flexDirection: "column",
       gap: 16,
