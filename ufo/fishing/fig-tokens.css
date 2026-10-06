@@ -1,0 +1,52 @@
+/* Generated from Figma Variables. First mode = :root default.
+   FLOAT tokens are unitless — multiply by 1px in calc() where a length is needed. */
+
+:root {
+  --black-muted: rgba(5,4,4,0.7); /* @kind color */
+  --color-base-white: var(--palette-base-white); /* @kind color */
+  --color-border-primary-default: var(--palette-harborblue-600); /* @kind color */
+  --color-icon-default: var(--palette-neutral-800); /* @kind color */
+  --color-text-primary-default: var(--palette-harborblue-600); /* @kind color */
+  --color-text-subtle: var(--palette-neutral-500); /* @kind color */
+  --lg: 15;
+  --offwhite: rgb(245,245,245); /* @kind color */
+  --palette-base-white: rgb(255,255,255); /* @kind color */
+  --palette-harborblue-400: rgb(41,151,255); /* @kind color */
+  --palette-harborblue-600: rgb(10,110,206); /* @kind color */
+  --palette-neutral-200: rgb(208,210,215); /* @kind color */
+  --palette-neutral-400: rgb(142,143,149); /* @kind color */
+  --palette-neutral-500: rgb(105,106,111); /* @kind color */
+  --palette-neutral-800: rgb(37,37,40); /* @kind color */
+  --space-12: 48;
+  --space-16: 64;
+  --space-1: 4;
+  --space-2: 8;
+  --space-2xl: var(--space-6);
+  --space-3xl: var(--space-8);
+  --space-4: 16;
+  --space-5: 20;
+  --space-5xl: var(--space-12);
+  --space-6: 24;
+  --space-6xl: var(--space-16);
+  --space-8: 32;
+  --space-lg: var(--space-4);
+  --space-sm: var(--space-2);
+  --space-xl: var(--space-5);
+  --space-xs: var(--space-1);
+}
+
+:root[data-theme="dark"], .dark {
+  --color-base-white: var(--palette-base-white); /* @kind color */
+  --color-border-primary-default: var(--palette-harborblue-600); /* @kind color */
+  --color-icon-default: var(--palette-neutral-200); /* @kind color */
+  --color-text-primary-default: var(--palette-harborblue-400); /* @kind color */
+  --color-text-subtle: var(--palette-neutral-400); /* @kind color */
+  --space-2xl: var(--space-6);
+  --space-3xl: var(--space-8);
+  --space-5xl: var(--space-12);
+  --space-6xl: var(--space-16);
+  --space-lg: var(--space-4);
+  --space-sm: var(--space-2);
+  --space-xl: var(--space-5);
+  --space-xs: var(--space-1);
+}
