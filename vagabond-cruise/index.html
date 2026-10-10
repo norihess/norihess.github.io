@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://noripage.com/vagabond-cruise/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-dark.png" type="image/png" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon-light.png" type="image/png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script src="/support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
 <style>
-html{scroll-behavior:smooth}
-body{margin:0;background:#2c3077;color:#fff;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip;margin:0;background:#2c3077;color:#fff;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 a:hover{color:#dfaf2c}
 </style>
@@ -31,10 +35,10 @@ a:hover{color:#dfaf2c}
   <a href="/" aria-label="Nori Page home" style="display:block"><img src="/assets/logo.png" alt="Nori Page" style="width:clamp(40px,3vw,56px);height:auto;display:block;filter:brightness(0) invert(1)"></a>
   <nav style="display:flex;gap:clamp(20px,2.4vw,40px);font-size:14px">
     <div style="position:relative;pointer-events:auto" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
-      <a href="/#work"  style="color:#fff;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></a>
+      <button type="button" aria-haspopup="true"  style="background:none;border:0;padding:0;margin:0;font:inherit;cursor:pointer;color:#fff;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></button>
       <sc-if value="{{ ddShown }}" hint-placeholder-val="{{ false }}">
         <div style="position:absolute;right:0;top:100%;padding-top:12px;z-index:60">
-          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="/fury/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="/sea-maui/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="/vagabond-cruise/" style="display:block;padding:12px 18px;font-size:14px;font-weight:700;color:#fff;letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="/ufo/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="/mexico-whale-shark/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="/aster-lane/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="/wanderlust/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="/nerve/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a></div>
+          <div style="background:#0d0d10;border-top:2px solid #fff;min-width:240px;box-shadow:0 20px 40px rgba(0,0,0,0.3)"><a href="/fury/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Fury Water Adventures</a><a href="/sea-maui/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Sea Maui</a><a href="/vagabond-cruise/" style="display:block;padding:12px 18px;font-size:14px;font-weight:700;color:#fff;letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Vagabond Cruise</a><a href="/ufo/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">UFO</a><a href="/mexico-whale-shark/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Mexico Whale Shark</a><a href="/aster-lane/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Aster Lane Floral</a><a href="/wanderlust/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Wanderlust</a><a href="/nerve/" style="display:block;padding:12px 18px;font-size:14px;font-weight:400;color:rgba(255,255,255,0.7);letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.18)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">Nerve</a><a href="/#work" style="display:flex;align-items:center;gap:8px;padding:12px 18px;font-size:14px;font-weight:700;color:#fff;letter-spacing:0;white-space:nowrap;border-top:1px solid rgba(255,255,255,0.45)" style-hover="color:#fff;background:rgba(255,255,255,0.18)">View all <span aria-hidden="true">→</span></a></div>
         </div>
       </sc-if>
     </div>
@@ -206,7 +210,7 @@ a:hover{color:#dfaf2c}
 class Component extends DCLogic {
   ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
-  ddToggle = e => { if (window.matchMedia("(hover: none)").matches && !this.state?.dd) { e.preventDefault(); this.setState({ dd: true }); } };
+  ddToggle = e => { e.preventDefault(); clearTimeout(this.ddT); const touch = window.matchMedia("(hover: none)").matches; this.setState(s => ({ dd: touch ? !s.dd : true })); };
   componentDidMount() {
     const links = [...document.querySelectorAll("[data-nav]")];
     const secs = links.map(a => document.getElementById(a.dataset.nav)).filter(Boolean);
