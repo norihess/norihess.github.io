@@ -34,7 +34,7 @@ a:hover{color:#dfaf2c}
 <header style="display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(24px,3vw,48px) 0;font-weight:600;letter-spacing:0.04em">
   <a href="/" aria-label="Nori Page home" style="display:block"><img src="/assets/logo.png" alt="Nori Page" style="width:clamp(40px,3vw,56px);height:auto;display:block;filter:brightness(0) invert(1)"></a>
   <nav style="display:flex;gap:clamp(20px,2.4vw,40px);font-size:14px">
-    <div style="position:relative;pointer-events:auto" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
+    <div style="position:relative;pointer-events:auto" data-dd="1" onMouseEnter="{{ ddOpen }}" onMouseLeave="{{ ddClose }}">
       <button type="button" aria-haspopup="true"  style="background:none;border:0;padding:0;margin:0;font:inherit;cursor:pointer;color:#fff;display:flex;align-items:center;gap:6px" onClick="{{ ddToggle }}">Case studies <span style="font-size:10px">▾</span></button>
       <sc-if value="{{ ddShown }}" hint-placeholder-val="{{ false }}">
         <div style="position:absolute;right:0;top:100%;padding-top:12px;z-index:60">
@@ -71,7 +71,7 @@ a:hover{color:#dfaf2c}
   </div>
 </section>
 
-<nav data-screen-label="Section nav" style="position:sticky;top:0;z-index:20;margin:0 calc(-1 * clamp(20px,4vw,64px));padding:0 clamp(20px,4vw,64px);background:#2c3077;color:#fff;border-bottom:2px solid currentColor;transition:background .25s,color .25s">
+<nav data-screen-label="Section nav" style="position:sticky;top:0;z-index:20;margin:0 calc(50% - 50vw);padding:0 calc(50vw - 50%);background:#2c3077;color:#fff;border-bottom:2px solid currentColor;transition:background .25s,color .25s">
   <div style="display:flex;gap:clamp(20px,2.4vw,36px);overflow-x:auto;white-space:nowrap;font-size:14px;scrollbar-width:none">
     <a href="#top" data-nav="top" style="flex:none;padding:14px 0;font-weight:700">Overview</a>
     <a href="#s-01" data-nav="s-01" style="flex:none;padding:14px 0;color:rgba(255,255,255,0.6);transition:color .2s">What shaped the design</a>
@@ -208,9 +208,10 @@ a:hover{color:#dfaf2c}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;desktopVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobileVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;desktopPrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobilePrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
 class Component extends DCLogic {
-  ddOpen = () => { clearTimeout(this.ddT); if (!(this.state && this.state.dd)) this.ddAt = Date.now(); this.setState({ dd: true }); };
+  ddOpen = () => { clearTimeout(this.ddT); if (!(this.state && this.state.dd)) this.ddAt = Date.now(); this.ddOut(); this.setState({ dd: true }); };
+  ddOut = () => { if (this.ddDoc) return; this.ddDoc = ev => { if (!ev.target.closest("[data-dd]")) { this.setState({ dd: false }); document.removeEventListener("click", this.ddDoc, true); this.ddDoc = null; } }; document.addEventListener("click", this.ddDoc, true); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
-  ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.setState({ dd: true }); } };
+  ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.ddOut(); this.setState({ dd: true }); } };
   componentDidMount() {
     const links = [...document.querySelectorAll("[data-nav]")];
     const secs = links.map(a => document.getElementById(a.dataset.nav)).filter(Boolean);
