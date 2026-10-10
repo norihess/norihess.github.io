@@ -161,9 +161,9 @@ a:hover{color:#e0a52c}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;desktopVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobileVideo&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;desktopPrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;mobilePrototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
 class Component extends DCLogic {
-  ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
+  ddOpen = () => { clearTimeout(this.ddT); if (!(this.state && this.state.dd)) this.ddAt = Date.now(); this.setState({ dd: true }); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
-  ddToggle = e => { e.preventDefault(); clearTimeout(this.ddT); const touch = window.matchMedia("(hover: none)").matches; this.setState(s => ({ dd: touch ? !s.dd : true })); };
+  ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.setState({ dd: true }); } };
   componentDidMount() {
     const links = [...document.querySelectorAll("[data-nav]")];
     const secs = links.map(a => document.getElementById(a.dataset.nav)).filter(Boolean);

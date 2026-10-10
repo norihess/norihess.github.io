@@ -181,9 +181,9 @@ a:hover{color:#e3262f}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { dd: false };
-  ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
+  ddOpen = () => { clearTimeout(this.ddT); if (!(this.state && this.state.dd)) this.ddAt = Date.now(); this.setState({ dd: true }); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
-  ddToggle = e => { e.preventDefault(); clearTimeout(this.ddT); const touch = window.matchMedia("(hover: none)").matches; this.setState(s => ({ dd: touch ? !s.dd : true })); };
+  ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.setState({ dd: true }); } };
 
   componentDidMount() { document.querySelectorAll("[data-carousel]").forEach(c => { const t = c.querySelector("[data-track]"), n = c.querySelector("[data-count]"); const go = d => t.scrollBy({ left: d * t.clientWidth, behavior: "smooth" }); c.querySelector("[data-prev]").onclick = () => go(-1); c.querySelector("[data-next]").onclick = () => go(1); const upd = () => { n.textContent = (Math.round(t.scrollLeft / t.clientWidth) + 1) + " / " + t.children.length; }; t.addEventListener("scroll", upd, { passive: true }); upd(); }); }
   renderVals() { return { ddShown: this.state.dd, ddOpen: this.ddOpen, ddClose: this.ddClose, ddToggle: this.ddToggle }; }

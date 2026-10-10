@@ -97,9 +97,9 @@ const PROJECTS = [
 
 const SLIDES = [INTRO, ...PROJECTS];
 class Component extends DCLogic {
-  ddOpen = () => { clearTimeout(this.ddT); this.setState({ dd: true }); };
+  ddOpen = () => { clearTimeout(this.ddT); if (!(this.state && this.state.dd)) this.ddAt = Date.now(); this.setState({ dd: true }); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
-  ddToggle = e => { e.preventDefault(); clearTimeout(this.ddT); const touch = window.matchMedia("(hover: none)").matches; this.setState(s => ({ dd: touch ? !s.dd : true })); };
+  ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.setState({ dd: true }); } };
   state = { active: 0, shown: 0, textOpacity: 1, textShift: 0 };
   reelRef = React.createRef();
   cur = 0; target = 0; lastWheel = 0;
