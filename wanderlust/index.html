@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="canonical" href="https://noripage.com/wanderlust/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-dark.png" type="image/png" media="(prefers-color-scheme: light)">
 <link rel="icon" href="/favicon-light.png" type="image/png" media="(prefers-color-scheme: dark)">
@@ -165,7 +166,7 @@ class Component extends DCLogic {
   ddOut = () => { if (this.ddDoc) return; this.ddDoc = ev => { if (!ev.target.closest("[data-dd]")) { this.setState({ dd: false }); document.removeEventListener("click", this.ddDoc, true); this.ddDoc = null; } }; document.addEventListener("click", this.ddDoc, true); };
   ddClose = () => { this.ddT = setTimeout(() => this.setState({ dd: false }), 150); };
   ddToggle = e => { e.preventDefault(); e.stopPropagation(); clearTimeout(this.ddT); const open = !!(this.state && this.state.dd); if (open && Date.now() - (this.ddAt || 0) > 500) { this.setState({ dd: false }); } else { if (!open) this.ddAt = Date.now(); this.ddOut(); this.setState({ dd: true }); } };
-  componentDidMount() {
+  componentDidMount() { if (!window.__toTop) { window.__toTop = 1; document.addEventListener("click", e => { const a = e.target.closest && e.target.closest("[data-totop]"); if (a) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); } }); }
     const links = [...document.querySelectorAll("[data-nav]")];
     const secs = links.map(a => document.getElementById(a.dataset.nav)).filter(Boolean);
     this.onStick = () => { const nav = links[0] && links[0].closest("nav"); if (!nav) return; const stuck = nav.getBoundingClientRect().top <= 0 && window.scrollY > 0; if (stuck === this.stuck) return; this.stuck = stuck; nav.style.background = stuck ? "#fff" : "#0f2624"; nav.style.color = stuck ? "#0f2624" : "#fff"; links.forEach(a => { const on = a.style.fontWeight === "700"; a.style.color = stuck ? (on ? "#0f2624" : "rgba(15,38,36,0.6)") : (on ? "#fff" : "rgba(255,255,255,0.6)"); }); };
